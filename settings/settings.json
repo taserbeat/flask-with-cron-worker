@@ -1,0 +1,31 @@
+{
+  "FlaskHost": "0.0.0.0",
+  "FlaskPort": 5000,
+  "FlaskDebug": true,
+  "CronTaskOptions": [
+    {
+      "TaskName": "SampleTask1",
+      "Cwd": ".",
+      "Command": "date",
+      "Cron": "*/1 * * * * *"
+    },
+    {
+      "TaskName": "SampleTask2",
+      "Cwd": "./workers",
+      "Command": "ls; curl http://localhost:5000",
+      "Cron": "*/2 * * * * *"
+    },
+    {
+      "TaskName": "SampleTask3",
+      "Cwd": ".",
+      "Command": "pipenv run python examples/sample_task3.py",
+      "Cron": "*/3 * * * * *"
+    },
+    {
+      "TaskName": "SampleTask4",
+      "Cwd": "./examples",
+      "Command": "bash ./sample_task4.sh",
+      "Cron": "*/4 * * * * *"
+    }
+  ]
+}
