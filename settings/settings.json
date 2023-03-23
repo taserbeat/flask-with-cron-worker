@@ -1,0 +1,19 @@
+{
+  "FlaskHost": "0.0.0.0",
+  "FlaskPort": 5000,
+  "FlaskDebug": true,
+  "CronTaskOptions": [
+    {
+      "TaskName": "SampleTask1",
+      "Cwd": ".",
+      "Command": "date",
+      "Cron": "*/1 * * * * *"
+    },
+    {
+      "TaskName": "SampleTask2",
+      "Cwd": "./workers",
+      "Command": "ls; curl http://localhost:5000",
+      "Cron": "*/2 * * * * *"
+    }
+  ]
+}
