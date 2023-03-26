@@ -1,0 +1,10 @@
+version: "3"
+services:
+  flask_with_cron_worker:
+    build:
+      context: ./
+    image: flask-with-cron-worker:latest
+    container_name: flask-with-cron-worker
+    tty: true
+    ports:
+        - "5000:5000"
