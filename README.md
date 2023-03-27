@@ -1,6 +1,13 @@
-# Flask with Crontab
+# Flask with crontab
 
-TODO: Add overview
+This project is the Proof of Concept that web service having crontab feature.  
+The process is a server that listens for HTTP requests, but is also a worker that periodically performs tasks.  
+By implementing this worker instead of using the OS crontab, you get a crontab that has the same life cycle as the web service.  
+It may be easier to operate on monolithic servers.
+
+- The web service and worker are running in the separate thread
+- Cron expressions are evaluated every second and `CronTask` is started in a new process when the condition is met
+- The configs of `CronTask` are written in [settings/settings.json](./settings/settings.json) as `CronTaskOptions` property
 
 # How to run it
 
